@@ -17,7 +17,11 @@ function empty(array) {
 }
 
 function isFull(array) {
-    
+    if (array.length < maxItems){
+        return false;
+    } else {
+        return true;
+    }
 }
 
 function listItems(array) {
@@ -44,8 +48,18 @@ console.log('should return "undefined" and not add an item to the array:', addIt
 console.log('array should be the same as before:', basket);
 
 console.log('--------------');
+console.log('\tTEST THREE');
+// random array tests
+arrayTestOne = [1,2,3,4]
+arrayTestTwo = [1,2,3,4,5]
+arrayTestThree = [1,2,3,4,5,6]
 
-
+console.log('Should be not full, returns false:', isFull(arrayTestOne));
+console.log('Should be full, returns true:', isFull(arrayTestTwo));
+console.log('Should be full, returns true:', isFull(arrayTestThree));
+//tests with basket array
+console.log('basket should return false:', isFull(basket));
+//isFull
 
 
 
