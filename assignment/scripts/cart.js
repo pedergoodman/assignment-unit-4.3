@@ -3,6 +3,7 @@ console.log('***** Cart Functions *****');
 // We want to see how you are testing your code!!!
 
 let basket = [];
+const maxItems = 5;
 
 function addItem(item) {
     if (item) {
@@ -15,34 +16,35 @@ function empty(array) {
     array = []
 }
 
+function isFull(array) {
+    
+}
+
 function listItems(array) {
     for (let i = 0; i < array.length; i++) {
         console.log(array[i]);
     }
 }
+
+
+
+
 console.log(`Basket is ${basket}`);
 console.log('\tTEST ONE');
 // test if item was added, should return true, and add an item to the array
-console.log(`Currently basket is: ${basket}`);
+console.log('Currently basket is:', basket);
 //
 console.log('should return "true" and add and item to the array:', addItem('mushrooms'));
 console.log('should contain "mushrooms":', basket);
 
-console.log('--------------');
+console.log('\tTEST TWO');
 // console.log('should return "true":', addItem('item'));
 // test if item was not added
 console.log('should return "undefined" and not add an item to the array:', addItem());
-
+console.log('array should be the same as before:', basket);
 
 console.log('--------------');
 
-console.log(`Basket is ${basket}`);
-console.log('Adding apples (expect true)', addItem('apples'));
-console.log(`Basket is now ${basket}`);
-
-
-
-console.log(listItems(basket));
 
 
 
