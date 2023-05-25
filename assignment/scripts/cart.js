@@ -54,8 +54,11 @@ arrayTestOne = [1,2,3,4]
 arrayTestTwo = [1,2,3,4,5]
 arrayTestThree = [1,2,3,4,5,6]
 
+console.log(arrayTestOne);
 console.log('Should be not full, returns false:', isFull(arrayTestOne));
+console.log(arrayTestTwo);
 console.log('Should be full, returns true:', isFull(arrayTestTwo));
+console.log(arrayTestThree);
 console.log('Should be full, returns true:', isFull(arrayTestThree));
 //tests with basket array
 console.log('basket should return false:', isFull(basket));
