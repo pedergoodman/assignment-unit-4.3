@@ -9,13 +9,15 @@ function addItem(item) {
     // treat falsy item input as invalid
     if (!isFull() && item) {
         basket.push(item);
+        console.log(`${item} was added to your cart.`);
         return true; // if basket is not full
     } 
+    console.log('Your basket is full');
     return false; // if item is full
 }
 
-function empty(array) {
-    array = []
+function empty() {
+    basket = []
 }
 
 function isFull() {
@@ -38,37 +40,36 @@ function listItems(array) {
 console.log('\tTEST ONE: Adding item to basket');
 // test if item was added, should return true, and add an item to the array
 console.log('Currently basket is:', basket);
-console.log('should return "true" and add and item to the array.\naddItem returns:', addItem('mushrooms'));
+console.log('should return "true" after adding item to array:', addItem('mushrooms'));
 console.log('basket should contain "mushrooms":', basket);
 
 console.log('\tTEST TWO: addItem parameter is empty');
-// console.log('should return "true":', addItem('item'));
 // test if item was not added
 console.log('should return "false" and not add an item to the array.\naddItem returns:', addItem());
 console.log('array should be the same as before:', basket);
 
-console.log('--------------');
-console.log('\tTEST THREE');
-// random array tests
-arrayTestOne = [1,2,3,4]
-arrayTestTwo = [1,2,3,4,5]
-arrayTestThree = [1,2,3,4,5,6]
 
-console.log(arrayTestOne);
-console.log('Should be not full, returns false:', isFull(arrayTestOne));
-console.log(arrayTestTwo);
-console.log('Should be full, returns true:', isFull(arrayTestTwo));
-console.log(arrayTestThree);
-console.log('Should be full, returns true:', isFull(arrayTestThree));
+console.log('\tTEST THREE: checking isFull function');
 
-//tests with basket array
-console.log('basket is:', basket, '\nshould return false:', isFull(basket));
+console.log('basket is currently:', basket);
 
-//fill basket
-console.log('Test filled basket');
-basket = ['item1', 2, 3, 4, 5, 6];
-console.log('filled basket, it now has', basket.length, 'items');
-console.log('basket is:', basket, '\nshould return false:', isFull(basket));
+
+console.log('adding another item, should return true:', addItem('spinach'));
+console.log('adding another item, should return true:', addItem('peppers'));
+console.log('adding another item, should return true:', addItem('onion'));
+console.log('adding another item, should return true:', addItem('eggs')); 
+// all these items above should be added to the cart and return true.
+
+console.log('test - basket length should be 5:', basket.length);
+console.log('basket is currently:', basket);
+
+// adding another item should give a cart full message and return false
+console.log('adding another item, should return false:', addItem('milk')); 
+
+
+empty() // resets basket 
+
+console.log('basket should now be empty:',basket);
 
 console.log('--------------');
 
