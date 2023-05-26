@@ -6,9 +6,13 @@ let basket = [];
 const maxItems = 5;
 
 function addItem(item) {
-    if (item) {
+    if (!isFull()) {
         basket.push(item);
-        return true;    
+        console.log('item added to basket:', item);
+        return true;
+    } else {
+        console.log('cart is full, item not added to basket:');
+        return false;    
     }
 }
 
@@ -16,8 +20,8 @@ function empty(array) {
     array = []
 }
 
-function isFull(array) {
-    if (array.length < maxItems){
+function isFull() {
+    if (basket.length < maxItems){
         return false;
     } else {
         return true;
@@ -33,11 +37,9 @@ function listItems(array) {
 
 
 
-console.log(`Basket is ${basket}`);
 console.log('\tTEST ONE');
 // test if item was added, should return true, and add an item to the array
 console.log('Currently basket is:', basket);
-//
 console.log('should return "true" and add and item to the array:', addItem('mushrooms'));
 console.log('should contain "mushrooms":', basket);
 
@@ -60,11 +62,17 @@ console.log(arrayTestTwo);
 console.log('Should be full, returns true:', isFull(arrayTestTwo));
 console.log(arrayTestThree);
 console.log('Should be full, returns true:', isFull(arrayTestThree));
+
 //tests with basket array
-console.log('basket should return false:', isFull(basket));
-//isFull
+console.log('basket is:', basket, '\nshould return false:', isFull(basket));
 
+//fill basket
+console.log('Test filled basket');
+basket = ['item1', 2, 3, 4, 5, 6];
+console.log('filled basket, it now has', basket.length, 'items');
+console.log('basket is:', basket, '\nshould return false:', isFull(basket));
 
+console.log('--------------');
 
 
 
