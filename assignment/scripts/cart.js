@@ -6,14 +6,12 @@ let basket = [];
 const maxItems = 5;
 
 function addItem(item) {
-    if (!isFull()) {
+    // treat falsy item input as invalid
+    if (!isFull() && item) {
         basket.push(item);
-        console.log('item added to basket:', item);
-        return true;
-    } else {
-        console.log('cart is full, item not added to basket:');
-        return false;    
-    }
+        return true; // if basket is not full
+    } 
+    return false; // if item is full
 }
 
 function empty(array) {
@@ -37,16 +35,16 @@ function listItems(array) {
 
 
 
-console.log('\tTEST ONE');
+console.log('\tTEST ONE: Adding item to basket');
 // test if item was added, should return true, and add an item to the array
 console.log('Currently basket is:', basket);
-console.log('should return "true" and add and item to the array:', addItem('mushrooms'));
-console.log('should contain "mushrooms":', basket);
+console.log('should return "true" and add and item to the array.\naddItem returns:', addItem('mushrooms'));
+console.log('basket should contain "mushrooms":', basket);
 
-console.log('\tTEST TWO');
+console.log('\tTEST TWO: addItem parameter is empty');
 // console.log('should return "true":', addItem('item'));
 // test if item was not added
-console.log('should return "undefined" and not add an item to the array:', addItem());
+console.log('should return "false" and not add an item to the array.\naddItem returns:', addItem());
 console.log('array should be the same as before:', basket);
 
 console.log('--------------');
